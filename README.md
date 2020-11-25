@@ -22,13 +22,13 @@ cara :
 + menambahkan `INTERFACES="eth1 eth2 eth3"` dalam interface DHCP relay request
 
 ### No 3 Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
-![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul4_Lapres/blob/main/imageprak3/img3_3.1.jpg)
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_3.1.jpg)
  
  cara:
 + `nano etc/default/isc-dhcp-server` dalam tuban
 + menambahkan `INTERFACEv4="eth0"`
 
-![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul4_Lapres/blob/main/imageprak3/img3_3.2.jpg)
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_3.2.jpg)
 
 cara:
 + `nano etc/dhcp/dhcp.conf` dalam tuban
@@ -36,8 +36,19 @@ cara:
 range 192.168.0.10 192.168.0.100;
 range 192.168.0.110 192.168.0.200;
 option routers 192.168.0.1;
-option broadcast-address 192.168.1.1;
+option broadcast-address 192.168.0.255;
 option domain-name-servers 10.151.77.66, 202.46.129.2;
 default-lease-time 300;
 max-lease-time 300;
 }`
++ `service isc-dhcp-server restart`
+
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_3.3.jpg)
+
+cara :
++ melakukan konfigurasi client gresik
+
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_3.4.jpg)
+
+cara :
++ melakukan konfigurasi client sidoarjo
