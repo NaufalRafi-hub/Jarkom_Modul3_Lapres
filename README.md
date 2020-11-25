@@ -46,19 +46,19 @@ max-lease-time 300;
 ![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_3.3.jpg)
 
 cara :
-+ melakukan konfigurasi gresik
++ melakukan konfigurasi gresik dengan menulis `ifconfig`
 
 ![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_3.4.jpg)
 
 cara :
-+ melakukan konfigurasi sidoarjo
++ melakukan konfigurasi sidoarjo dengan menulis `ifconfig`
 
 ### No 4 Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
 ![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_4.1.jpg)
 
 cara :
 + `nano etc/dhcp/dhcp.conf` dalam tuban
-+ mengubah range IP, broadcast address, default lease time, dan max lease time
++ mengubah range IP
 + menambahkan `subnet 192.168.0.0 netmask 255.255.255.0 {
 range 192.168.1.50 192.168.1.70;
 option routers 192.168.1.1;
@@ -67,7 +67,25 @@ option domain-name-servers 10.151.77.66, 202.46.129.2;
 default-lease-time 600;
 max-lease-time 600;
 }`
-+ melakukan konfigurasi pada banyuwangi dan madiun
++ melakukan konfigurasi pada banyuwangi dan madiun dengan menulis `ifconfig`
 ![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_4.2.jpg)
 ![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_4.3.jpg)
+
+### No 5	Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_5.1.jpg)
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_5.2.jpg)
+
+cara :
++ `nano etc/dhcp/dhcp.conf` dalam tuban
++ mengubah domain-name-sercers
++ `10.151.77.66, 202.46.129.2`
+
+### No 6	Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan client pada subnet 3 mendapatkan peminjaman IP selama 10 menit.
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_6.1.jpg)
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_6.2.jpg)
+cara :
++ `nano etc/dhcp/dhcp.conf` dalam tuban
++ mengubah `default-lease-time` dan `max-lease-time` pada subnet 1 dan 3
++ pada subnet 1 ditulis `default-lease-time 300` (5menit)
++ pada subnet 3 ditulis `default-lease-time 600` (10menit)
 
