@@ -2,7 +2,7 @@
 Laporan Resmi Praktikum Modul 3 Jaringan Komputer 2020  Kelompok C07 (0099 &amp; 0157)
 # Pembahasan Jawaban
 ### No 1 membuat topologi jaringan
-![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul4_Lapres/blob/main/imageprak3/img3_1.jpg)
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_1.jpg)
 
 cara :
 + rm kota sebelumnya yang ada di praktikum
@@ -13,7 +13,7 @@ cara :
 + memory maisng-masing ktoa diset sesuai yang soal inginkan
 
 ### No 2 surabaya menjadi perantara ( DHCP Relay ) antara DHCP Server dan client.
-![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul4_Lapres/blob/main/imageprak3/img3_2.jpg)
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_2.jpg)
 
 cara :
 + `apt-get install isc-dhcp-relay` dalam surabaya
@@ -46,9 +46,28 @@ max-lease-time 300;
 ![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_3.3.jpg)
 
 cara :
-+ melakukan konfigurasi client gresik
++ melakukan konfigurasi gresik
 
 ![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_3.4.jpg)
 
 cara :
-+ melakukan konfigurasi client sidoarjo
++ melakukan konfigurasi sidoarjo
+
+### No 4 Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_4.1.jpg)
+
+cara :
++ `nano etc/dhcp/dhcp.conf` dalam tuban
++ mengubah range IP, broadcast address, default lease time, dan max lease time
++ menambahkan `subnet 192.168.0.0 netmask 255.255.255.0 {
+range 192.168.1.50 192.168.1.70;
+option routers 192.168.1.1;
+option broadcast-address 192.168.1.255;
+option domain-name-servers 10.151.77.66, 202.46.129.2;
+default-lease-time 600;
+max-lease-time 600;
+}`
++ melakukan konfigurasi pada banyuwangi dan madiun
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_4.2.jpg)
+![alt text](https://github.com/NaufalRafi-hub/Jarkom_Modul3_Lapres/blob/main/imageprak3/img3_4.3.jpg)
+
